@@ -38,10 +38,10 @@ export function ReportSignup() {
                 setDone(true);
               }}
             >
-              <label className="block text-sm font-semibold text-forest-950">Email address</label>
-              <input name="email" type="email" required placeholder="you@example.com" className="mt-2 h-12 w-full rounded-xl border border-forest-900/15 bg-white px-4 text-sm focus:border-forest-900 focus:outline-none" />
-              <label className="mt-4 block text-sm font-semibold text-forest-950">I am mainly interested in</label>
-              <select name="interest" className="mt-2 h-12 w-full rounded-xl border border-forest-900/15 bg-white px-4 text-sm focus:outline-none">
+              <label htmlFor="report-email" className="block text-sm font-semibold text-forest-950">Email address</label>
+              <input id="report-email" name="email" type="email" required placeholder="you@example.com" className="mt-2 h-12 w-full rounded-xl border border-forest-900/15 bg-white px-4 text-sm focus:border-forest-900 focus:outline-none" />
+              <label htmlFor="report-interest" className="mt-4 block text-sm font-semibold text-forest-950">I am mainly interested in</label>
+              <select id="report-interest" name="interest" className="mt-2 h-12 w-full rounded-xl border border-forest-900/15 bg-white px-4 text-sm focus:outline-none">
                 {["Buying land", "Buying a home", "Investing", "Selling"].map((o) => <option key={o}>{o}</option>)}
               </select>
               <button type="submit" className="mt-5 h-12 w-full rounded-full bg-forest-900 text-sm font-semibold text-white transition hover:bg-forest-800">Send me the report</button>

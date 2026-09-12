@@ -42,6 +42,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${manrope.variable} ${instrument.variable} h-full antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      </head>
       <body className="min-h-full flex flex-col">
         <CurrencyProvider>
           <SmoothScroll />

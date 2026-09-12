@@ -37,12 +37,12 @@ export function Hero() {
           <motion.div
             key={slide}
             initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1.05 }}
             exit={{ opacity: 0 }}
             transition={{ opacity: { duration: 1.6, ease: "easeInOut" }, scale: { duration: 8, ease: "linear" } }}
             className="absolute inset-0"
           >
-            <Image src={slides[slide]} alt="Premium property" fill priority={slide === 0} sizes="100vw" className="object-cover" />
+            <Image src={slides[slide]} alt="Premium property" fill priority={slide === 0} quality={55} sizes="100vw" className="object-cover" />
           </motion.div>
         </AnimatePresence>
       </motion.div>
@@ -65,7 +65,7 @@ export function Hero() {
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
-                transition={{ delay: 0.3 + i * 0.12, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.15 + i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className={`inline-block ${i === 2 ? "italic text-gold-400" : ""}`}
               >
                 {w}

@@ -23,6 +23,7 @@ export function PropertyCard({ p, className, index = 0 }: { p: Property; classNa
           src={p.images[0]}
           alt={p.title}
           fill
+          quality={65}
           sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
