@@ -40,8 +40,8 @@ export function EnquiryCard({ p }: { p: Property }) {
           window.open(waLink(msg), "_blank");
         }}
       >
-        <input name="name" required placeholder="Your name" className="h-11 w-full rounded-xl border border-forest-900/15 bg-cream-50 px-4 text-sm focus:border-forest-900 focus:outline-none" />
-        <input name="date" type="date" className="h-11 w-full rounded-xl border border-forest-900/15 bg-cream-50 px-4 text-sm text-forest-900 focus:border-forest-900 focus:outline-none" />
+        <input name="name" required placeholder="Your name" aria-label="Your name" className="h-11 w-full rounded-xl border border-forest-900/15 bg-cream-50 px-4 text-sm focus:border-forest-900 focus:outline-none" />
+        <input name="date" type="date" aria-label="Preferred date" className="h-11 w-full rounded-xl border border-forest-900/15 bg-cream-50 px-4 text-sm text-forest-900 focus:border-forest-900 focus:outline-none" />
         <Button type="submit" variant="gold" className="w-full">
           {mode === "visit" ? "Book a site visit" : "Book a video tour"}
         </Button>

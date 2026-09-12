@@ -49,13 +49,13 @@ export default function AboutPage() {
       <section className="bg-cream-200 py-20 lg:py-28">
         <Container>
           <Reveal className="max-w-2xl">
-            <p className="eyebrow text-gold-600">Our story</p>
+            <p className="eyebrow text-gold-700">Our story</p>
             <h2 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl">Built on one principle, <span className="italic text-forest-700">kept on every deal.</span></h2>
           </Reveal>
           <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-forest-900/10 bg-forest-900/10 md:grid-cols-5">
             {milestones.map((m, i) => (
               <Reveal key={m.title} delay={i * 0.06} className="bg-cream-100 p-7">
-                <p className="eyebrow text-gold-600">{m.year}</p>
+                <p className="eyebrow text-gold-700">{m.year}</p>
                 <h3 className="mt-4 text-lg font-semibold text-forest-950">{m.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-muted">{m.body}</p>
               </Reveal>

@@ -49,7 +49,7 @@ export function CategoryPage({
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
             <Reveal>
-              <p className="eyebrow text-gold-600">Buyer&apos;s guide</p>
+              <p className="eyebrow text-gold-700">Buyer&apos;s guide</p>
               <h2 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl">{guide.title}</h2>
             </Reveal>
             <div className="space-y-8">

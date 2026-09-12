@@ -13,7 +13,7 @@ export function ReportSignup() {
       <Container>
         <Reveal className="grid items-center gap-10 overflow-hidden rounded-3xl bg-white p-8 ring-1 ring-forest-900/10 lg:grid-cols-[1.3fr_1fr] lg:p-12">
           <div>
-            <p className="eyebrow flex items-center gap-2 text-gold-600"><FileText className="size-4" /> Quarterly market report</p>
+            <p className="eyebrow flex items-center gap-2 text-gold-700"><FileText className="size-4" /> Quarterly market report</p>
             <h2 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl">Know the market before <span className="italic text-forest-700">you buy.</span></h2>
             <p className="mt-4 max-w-lg text-ink-muted">Plot prices by area, new road and utility projects, and the corridors we are watching. Written for buyers and investors, not for agents.</p>
             <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-forest-900">

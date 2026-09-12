@@ -12,7 +12,7 @@ export function Logo({ className, light = false }: { className?: string; light?:
       </svg>
       <span className="serif-display text-[1.55rem] leading-none tracking-tight">
         <span className={light ? "text-white" : "text-forest-900"}>Estates</span>{" "}
-        <span className={light ? "text-gold-400 italic" : "text-gold-600 italic"}>Trust</span>
+        <span className={light ? "text-gold-400 italic" : "text-gold-700 italic"}>Trust</span>
       </span>
     </Link>
   );

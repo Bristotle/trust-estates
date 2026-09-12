@@ -59,7 +59,7 @@ export default function ProcessPage() {
             {stages.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.04} className="grid gap-8 rounded-3xl bg-white p-8 ring-1 ring-forest-900/10 lg:grid-cols-[220px_1fr_1fr] lg:p-10">
                 <div>
-                  <p className="eyebrow text-gold-600">{s.n}</p>
+                  <p className="eyebrow text-gold-700">{s.n}</p>
                   <h2 className="serif-display mt-3 text-3xl text-forest-950">{s.t}</h2>
                   <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-ink-muted">Typical time</p>
                   <p className="text-sm font-medium text-forest-900">{s.time}</p>

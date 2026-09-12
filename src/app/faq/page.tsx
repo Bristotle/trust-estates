@@ -59,7 +59,7 @@ export default function FaqPage() {
             {groups.map((g, i) => (
               <div key={g.title} className="grid gap-8 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
                 <Reveal delay={i * 0.03}>
-                  <p className="eyebrow text-gold-600">{String(i + 1).padStart(2, "0")}</p>
+                  <p className="eyebrow text-gold-700">{String(i + 1).padStart(2, "0")}</p>
                   <h2 className="serif-display mt-3 text-4xl text-forest-950">{g.title}</h2>
                 </Reveal>
                 <FaqList items={g.items} defaultOpen={i === 0 ? 0 : null} />

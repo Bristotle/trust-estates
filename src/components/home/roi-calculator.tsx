@@ -25,7 +25,7 @@ export function RoiCalculator({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className={`rounded-3xl bg-white p-6 text-forest-950 shadow-[0_30px_80px_-30px_rgba(6,34,26,0.5)] ring-1 ring-forest-900/10 ${compact ? "" : "lg:p-8"}`}>
-      <p className="eyebrow text-gold-600">Return estimator</p>
+      <p className="eyebrow text-gold-700">Return estimator</p>
       <div className="mt-5 grid grid-cols-3 gap-2">
         {PLANS.map((p) => (
           <button

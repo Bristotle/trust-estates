@@ -31,7 +31,7 @@ export default function SellPage() {
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
             <div>
-              <p className="eyebrow text-gold-600">Why sell to Estates Trust</p>
+              <p className="eyebrow text-gold-700">Why sell to Estates Trust</p>
               <h2 className="serif-display mt-4 text-4xl text-forest-950">A buyer you can actually rely on.</h2>
               <div className="mt-10 space-y-8">
                 {why.map((w, i) => (

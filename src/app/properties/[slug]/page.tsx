@@ -39,16 +39,16 @@ export default async function PropertyPage({ params }: Params) {
             <div>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="rounded-full bg-forest-900 px-3 py-1 text-[11px] font-semibold tracking-wide text-white">{typeLabel[p.type]}</span>
-                <span className="flex items-center gap-1 rounded-full bg-gold-400/20 px-3 py-1 text-[11px] font-semibold tracking-wide text-gold-600">
+                <span className="flex items-center gap-1 rounded-full bg-gold-400/20 px-3 py-1 text-[11px] font-semibold tracking-wide text-gold-700">
                   <BadgeCheck className="size-3.5" /> {p.titleStatus}
                 </span>
                 {p.roi && <span className="rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold text-forest-950">{p.roi}</span>}
               </div>
               <h1 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl lg:text-6xl">{p.title}</h1>
               <p className="mt-3 flex items-center gap-2 text-ink-muted">
-                <MapPin className="size-4 text-gold-600" /> {p.location} · {p.region} Region
+                <MapPin className="size-4 text-gold-700" /> {p.location} · {p.region} Region
                 <span className="mx-1 text-forest-900/20">|</span>
-                <Ruler className="size-4 text-gold-600" /> {p.size}
+                <Ruler className="size-4 text-gold-700" /> {p.size}
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default async function PropertyPage({ params }: Params) {
               <Gallery images={p.images} title={p.title} />
 
               <Reveal>
-                <p className="eyebrow text-gold-600">Overview</p>
+                <p className="eyebrow text-gold-700">Overview</p>
                 <p className="mt-4 text-lg leading-relaxed text-forest-950">{p.summary}</p>
                 <p className="mt-4 leading-relaxed text-ink-muted">{p.description}</p>
                 <div className="mt-6 flex flex-wrap gap-2">
@@ -68,7 +68,7 @@ export default async function PropertyPage({ params }: Params) {
 
               <Reveal className="grid gap-10 sm:grid-cols-2">
                 <div>
-                  <p className="eyebrow text-gold-600">Highlights</p>
+                  <p className="eyebrow text-gold-700">Highlights</p>
                   <ul className="mt-4 space-y-3">
                     {p.highlights.map((h) => (
                       <li key={h} className="flex gap-3 text-sm text-forest-950">
@@ -78,11 +78,11 @@ export default async function PropertyPage({ params }: Params) {
                   </ul>
                 </div>
                 <div>
-                  <p className="eyebrow text-gold-600">Documents available</p>
+                  <p className="eyebrow text-gold-700">Documents available</p>
                   <ul className="mt-4 space-y-3">
                     {p.documents.map((d) => (
                       <li key={d} className="flex gap-3 text-sm text-forest-950">
-                        <FileText className="mt-0.5 size-4 shrink-0 text-gold-600" /> {d}
+                        <FileText className="mt-0.5 size-4 shrink-0 text-gold-700" /> {d}
                       </li>
                     ))}
                   </ul>
@@ -91,7 +91,7 @@ export default async function PropertyPage({ params }: Params) {
               </Reveal>
 
               <Reveal>
-                <p className="eyebrow text-gold-600">Location</p>
+                <p className="eyebrow text-gold-700">Location</p>
                 <div className="relative mt-4 h-[360px] overflow-hidden rounded-3xl bg-forest-900 ring-1 ring-forest-900/10 grain">
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-white">
                     <MapPin className="size-8 text-gold-400" />

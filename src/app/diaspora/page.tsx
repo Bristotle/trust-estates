@@ -37,7 +37,7 @@ export default function DiasporaPage() {
       <section className="bg-cream-100 py-20 lg:py-28">
         <Container>
           <Reveal className="max-w-2xl">
-            <p className="eyebrow text-gold-600">The remote purchase process</p>
+            <p className="eyebrow text-gold-700">The remote purchase process</p>
             <h2 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl">Six steps, all documented.</h2>
           </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

@@ -32,7 +32,7 @@ export default function InvestPage() {
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
             <div>
-              <p className="eyebrow text-gold-600">Investment products</p>
+              <p className="eyebrow text-gold-700">Investment products</p>
               <h2 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl">Three ways to grow.</h2>
               <div className="mt-10 space-y-4">
                 {products.map((p, i) => (
@@ -56,7 +56,7 @@ export default function InvestPage() {
       </section>
       <section className="bg-cream-200 py-20">
         <Container>
-          <p className="eyebrow text-gold-600">Open now</p>
+          <p className="eyebrow text-gold-700">Open now</p>
           <h2 className="serif-display mt-3 text-4xl text-forest-950">Current investment opportunities</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {properties.filter((p) => p.type === "investment").map((p, i) => <PropertyCard key={p.slug} p={p} index={i} />)}
@@ -67,7 +67,7 @@ export default function InvestPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
             <Reveal>
-              <p className="eyebrow text-gold-600">Investor questions</p>
+              <p className="eyebrow text-gold-700">Investor questions</p>
               <h2 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl">Before you commit <span className="italic text-forest-700">a cedi.</span></h2>
             </Reveal>
             <FaqList items={[

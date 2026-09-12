@@ -75,7 +75,7 @@ export function PropertyCard({ p, className, index = 0, priority = false }: { p:
           <Link href={`/properties/${p.slug}`}>{p.title}</Link>
         </h3>
         <p className="mt-1.5 flex items-center gap-1.5 text-sm text-ink-muted">
-          <MapPin className="size-3.5 text-gold-600" /> {p.location}
+          <MapPin className="size-3.5 text-gold-700" /> {p.location}
         </p>
         <div className="mt-4 flex items-center justify-between border-t border-forest-900/8 pt-4 text-[13px] text-ink-muted">
           <span className="flex items-center gap-1.5">
