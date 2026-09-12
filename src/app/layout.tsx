@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { CurrencyProvider } from "@/lib/currency";
@@ -15,7 +15,16 @@ const instrument = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trust-estates.vercel.app";
+
+export const viewport: Viewport = {
+  themeColor: "#06221a",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: { default: "Estates Trust | Verified Lands, Buildings & Investments in Ghana", template: "%s · Estates Trust" },
   description:
     "Buy, sell and invest in genuine, titled real estate across Ghana, Africa and beyond. Your trust. Our commitment. Your future.",
@@ -23,7 +32,11 @@ export const metadata: Metadata = {
     title: "Estates Trust",
     description: "Verified lands, buildings and investments across Ghana, Africa and beyond.",
     type: "website",
+    siteName: "Estates Trust",
+    locale: "en_GH",
   },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

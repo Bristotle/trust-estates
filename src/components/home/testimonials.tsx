@@ -54,9 +54,11 @@ export function Testimonials() {
                 </div>
               </motion.div>
             </AnimatePresence>
-            <div className="absolute bottom-8 right-8 flex gap-1.5">
+            <div className="absolute bottom-6 right-6 flex">
               {testimonials.map((_, k) => (
-                <button key={k} onClick={() => setI(k)} className={`h-1.5 rounded-full transition-all ${k === i ? "w-6 bg-gold-400" : "w-1.5 bg-white/30"}`} aria-label={`Go to ${k + 1}`} />
+                <button key={k} onClick={() => setI(k)} className="grid h-8 min-w-8 place-items-center" aria-label={`Go to testimonial ${k + 1}`}>
+                  <span className={`block h-1.5 rounded-full transition-all ${k === i ? "w-6 bg-gold-400" : "w-1.5 bg-white/30"}`} />
+                </button>
               ))}
             </div>
           </div>

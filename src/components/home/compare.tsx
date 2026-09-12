@@ -22,13 +22,14 @@ export function Compare() {
           align="center"
         />
         <Reveal delay={0.1} className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-3xl bg-white ring-1 ring-forest-900/10">
-          <div className="grid grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-forest-900/10 bg-cream-50 px-6 py-5 text-sm font-semibold sm:grid-cols-[1fr_160px_160px]">
+          <div className="grid grid-cols-[1fr_56px_72px] items-center gap-3 border-b border-forest-900/10 bg-cream-50 px-4 py-4 text-[13px] font-semibold sm:grid-cols-[1fr_160px_160px] sm:gap-4 sm:px-6 sm:py-5 sm:text-sm">
             <span className="text-ink-muted">What you get</span>
-            <span className="flex justify-center"><Logo className="scale-90" /></span>
-            <span className="text-center text-ink-muted">Typical agent</span>
+            <span className="hidden justify-center sm:flex"><Logo className="scale-90" /></span>
+            <span className="text-center text-forest-900 sm:hidden">Us</span>
+            <span className="text-center text-ink-muted">Typical<span className="hidden sm:inline"> agent</span><span className="sm:hidden"> agent</span></span>
           </div>
           {comparison.map((c, i) => (
-            <div key={c.item} className={`grid grid-cols-[1fr_auto_auto] items-center gap-4 px-6 py-4 text-sm sm:grid-cols-[1fr_160px_160px] ${i % 2 ? "bg-cream-50/60" : ""}`}>
+            <div key={c.item} className={`grid grid-cols-[1fr_56px_72px] items-center gap-3 px-4 py-4 text-[13px] sm:grid-cols-[1fr_160px_160px] sm:gap-4 sm:px-6 sm:text-sm ${i % 2 ? "bg-cream-50/60" : ""}`}>
               <span className="text-forest-950">{c.item}</span>
               <span className="flex justify-center"><Cell v={c.us} /></span>
               <span className="flex justify-center"><Cell v={c.them} /></span>
