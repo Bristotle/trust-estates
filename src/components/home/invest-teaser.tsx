@@ -6,7 +6,7 @@ import { BadgeCheck, FileSignature, PiggyBank, Shield } from "lucide-react";
 
 const points = [
   { icon: FileSignature, t: "Contracted returns", b: "Every investment is backed by a signed agreement setting out returns, timelines and exit." },
-  { icon: Shield, t: "Asset-backed", b: "Your capital is tied to real, titled property — not promises." },
+  { icon: Shield, t: "Asset-backed", b: "Your capital is tied to real, titled property, not promises." },
   { icon: PiggyBank, t: "From GH₵50,000", b: "Accessible entry points, with quarterly statements and payouts." },
   { icon: BadgeCheck, t: "Managed for you", b: "We handle tenants, maintenance and paperwork. You receive the returns." },
 ];
@@ -20,7 +20,7 @@ export function InvestTeaser() {
             <SectionHeading
               eyebrow="Invest with us"
               title={<>Secure today. <span className="italic text-forest-700">Profit tomorrow.</span></>}
-              body="Put your money to work in Ghana's property market with a partner that manages everything on the ground — whether you're in Accra or abroad."
+              body="Put your money to work in Ghana's property market with a partner that manages everything on the ground, whether you're in Accra or abroad."
             />
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
               {points.map((p, i) => (

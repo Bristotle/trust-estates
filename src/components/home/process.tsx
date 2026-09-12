@@ -28,7 +28,7 @@ export function Process() {
               ))}
             </div>
             <Reveal delay={0.2} className="mt-10">
-              <Button href="/about" variant="forest">Read our full process</Button>
+              <Button href="/process" variant="forest">Read our full process</Button>
             </Reveal>
           </div>
 

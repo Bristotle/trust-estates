@@ -10,7 +10,7 @@ const services = [
   {
     icon: LandPlot,
     title: "We buy lands & buildings",
-    body: "Own property you want to sell? We value it fairly, verify the paperwork and pay on the agreed date — no stories.",
+    body: "Own property you want to sell? We value it fairly, verify the paperwork and pay on the agreed date. No stories.",
     href: "/sell",
     cta: "Sell to us",
     img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
@@ -43,7 +43,7 @@ export function Services() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading eyebrow="What we do" title={<>Buy. Sell. <span className="italic text-gold-400">Invest.</span></>} light />
           <Reveal delay={0.1} className="max-w-md text-white/60">
-            Three ways to build wealth through property — all backed by the same verification standard.
+            Three ways to build wealth through property, all backed by the same verification standard.
           </Reveal>
         </div>
 

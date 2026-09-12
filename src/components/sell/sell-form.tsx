@@ -39,7 +39,7 @@ export function SellForm() {
       <div className="rounded-3xl bg-white p-10 text-center ring-1 ring-forest-900/10">
         <span className="mx-auto grid size-14 place-items-center rounded-full bg-forest-900 text-gold-400"><Check className="size-6" /></span>
         <h3 className="serif-display mt-6 text-3xl text-forest-950">Thank you, {d.name.split(" ")[0]}.</h3>
-        <p className="mx-auto mt-3 max-w-sm text-ink-muted">Your details are ready to send. Tap below to open WhatsApp with everything pre-filled — an advisor will confirm a free valuation within 7 working days.</p>
+        <p className="mx-auto mt-3 max-w-sm text-ink-muted">Your details are ready to send. Tap below to open WhatsApp with everything pre-filled. An advisor will confirm a free valuation within 7 working days.</p>
         <Button href={waLink(message)} variant="whatsapp" size="lg" className="mt-8"><MessageCircle className="size-4" /> Send via WhatsApp</Button>
       </div>
     );
@@ -89,7 +89,7 @@ export function SellForm() {
                 </div>
                 <label className="block">
                   <span className="font-semibold text-forest-950">Town / area</span>
-                  <input value={d.area} onChange={(e) => set("area", e.target.value)} placeholder="e.g. Oyarifa, near the Adenta–Dodowa road" className={cn(input, "mt-3")} />
+                  <input value={d.area} onChange={(e) => set("area", e.target.value)} placeholder="e.g. Oyarifa, near the Adenta to Dodowa road" className={cn(input, "mt-3")} />
                 </label>
               </div>
             )}
@@ -97,7 +97,7 @@ export function SellForm() {
               <div className="space-y-6">
                 <div>
                   <p className="font-semibold text-forest-950">Which documents do you have?</p>
-                  <p className="mt-1 text-sm text-ink-muted">Don&apos;t worry if it&apos;s incomplete — we can help you regularise.</p>
+                  <p className="mt-1 text-sm text-ink-muted">Don&apos;t worry if it&apos;s incomplete, we can help you regularise.</p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {DOCS.map((doc) => {
                       const on = d.docs.includes(doc);

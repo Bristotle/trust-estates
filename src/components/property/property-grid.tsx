@@ -17,8 +17,8 @@ const TYPES: { v: PropertyType | ""; l: string }[] = [
 const BUDGETS = [
   { l: "Any budget", min: 0, max: Infinity },
   { l: "Under GH₵250k", min: 0, max: 250000 },
-  { l: "GH₵250k – 1M", min: 250000, max: 1000000 },
-  { l: "GH₵1M – 3M", min: 1000000, max: 3000000 },
+  { l: "GH₵250k to 1M", min: 250000, max: 1000000 },
+  { l: "GH₵1M to 3M", min: 1000000, max: 3000000 },
   { l: "GH₵3M+", min: 3000000, max: Infinity },
 ];
 
@@ -28,10 +28,10 @@ const SORTS = [
   { v: "price-desc", l: "Price: high to low" },
 ];
 
-export function PropertyGrid() {
+export function PropertyGrid({ fixedType }: { fixedType?: PropertyType } = {}) {
   const params = useSearchParams();
   const router = useRouter();
-  const [type, setType] = useState<PropertyType | "">((params.get("type") as PropertyType) || "");
+  const [type, setType] = useState<PropertyType | "">(fixedType || (params.get("type") as PropertyType) || "");
   const [region, setRegion] = useState(params.get("region") || "");
   const [budget, setBudget] = useState(BUDGETS.find((b) => b.l === params.get("budget"))?.l || BUDGETS[0].l);
   const [titled, setTitled] = useState(false);
@@ -53,15 +53,16 @@ export function PropertyGrid() {
   }, [type, region, budget, titled, sort]);
 
   const reset = () => {
-    setType(""); setRegion(""); setBudget(BUDGETS[0].l); setTitled(false); setSort("featured");
-    router.replace("/properties");
+    setType(fixedType || ""); setRegion(""); setBudget(BUDGETS[0].l); setTitled(false); setSort("featured");
+    if (!fixedType) router.replace("/properties");
   };
-  const active = type || region || budget !== BUDGETS[0].l || titled;
+  const active = (!fixedType && type) || region || budget !== BUDGETS[0].l || titled;
 
   return (
     <div>
       <div className="sticky top-[72px] z-30 -mx-5 border-b border-forest-900/10 bg-cream-100/90 px-5 py-4 backdrop-blur-xl sm:-mx-8 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3">
+          {!fixedType && (
           <div className="flex rounded-full border border-forest-900/15 bg-white p-1">
             {TYPES.map((t) => (
               <button
@@ -73,6 +74,7 @@ export function PropertyGrid() {
               </button>
             ))}
           </div>
+          )}
           <select value={region} onChange={(e) => setRegion(e.target.value)} className="h-10 rounded-full border border-forest-900/15 bg-white px-4 text-[13px] font-medium text-forest-900">
             <option value="">All regions</option>
             {regions.map((r) => <option key={r}>{r}</option>)}

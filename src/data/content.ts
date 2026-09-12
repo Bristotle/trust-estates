@@ -15,7 +15,7 @@ export const testimonials = [
     location: "London, UK",
     quote:
       "I bought from London without stepping foot in Ghana until handover. They sent me the Lands Commission search before I paid a cedi. That's the kind of transparency I needed.",
-    avatar: u("1494790108377-be9c29b29330", 200),
+    avatar: u("1573497491765-dccce02b29df", 200),
   },
   {
     name: "Kwame Boateng",
@@ -23,15 +23,15 @@ export const testimonials = [
     location: "Kumasi, Ghana",
     quote:
       "My returns have come in every quarter as promised. The team manages the tenants and I just receive the statements. It's the most hands-off investment I own.",
-    avatar: u("1507003211169-0a1dd7228f2d", 200),
+    avatar: u("1531384441138-2736e62e0919", 200),
   },
   {
     name: "Efua & Daniel Asante",
     role: "Family home · Tema C25",
     location: "Toronto, Canada",
     quote:
-      "We had been burned before by an agent who sold us disputed land. Estates Trust walked us through every document. Our home is registered in our names — we finally sleep well.",
-    avatar: u("1438761681033-6461ffad8d80", 200),
+      "We had been burned before by an agent who sold us disputed land. Estates Trust walked us through every document. Our home is registered in our names, and we finally sleep well.",
+    avatar: u("1611432579699-484f7990b127", 200),
   },
   {
     name: "Ibrahim Sulley",
@@ -39,14 +39,55 @@ export const testimonials = [
     location: "Accra, Ghana",
     quote:
       "They valued our land fairly, handled the paperwork and paid on the agreed date. No stories, no delays.",
-    avatar: u("1500648767791-00dcc994a43e", 200),
+    avatar: u("1506277886164-e25aa3f4ef7f", 200),
   },
 ];
 
 export const team = [
-  { name: "Managing Director", role: "Founder & Managing Director", img: u("1560250097-0b93528c311a", 600) },
-  { name: "Head of Legal", role: "Title & Conveyancing", img: u("1573497019940-1c28c88b4f3e", 600) },
-  { name: "Head of Sales", role: "Client Relations", img: u("1519389950473-47ba0277781c", 600) },
+  { name: "Managing Director", role: "Founder & Managing Director", icon: "briefcase", body: "Sets the standard: no listing goes public without passing verification." },
+  { name: "Head of Legal", role: "Title & Conveyancing", icon: "scale", body: "Runs every Lands Commission search and registers titles in clients' names." },
+  { name: "Head of Surveying", role: "Site Verification", icon: "compass", body: "Walks every plot, confirms beacons and speaks with adjoining owners." },
+  { name: "Head of Sales", role: "Client Relations", icon: "handshake", body: "Your single point of contact from first enquiry to handover." },
+  { name: "Investment Desk", role: "Portfolio & Returns", icon: "chart", body: "Structures rental, land-banking and JV products and issues quarterly statements." },
+  { name: "Diaspora Desk", role: "International Clients", icon: "globe", body: "Video tours, power of attorney and payment support across UK, US and EU time zones." },
+];
+
+export const recentlySecured = [
+  { what: "2 plots", where: "Oyarifa, Accra", who: "Client in London", when: "3 days ago" },
+  { what: "4-bed home", where: "Tema Community 25", who: "Family in Accra", when: "1 week ago" },
+  { what: "GH₵400k investment", where: "Ahodwo apartments", who: "Investor in Kumasi", when: "1 week ago" },
+  { what: "1.5 acres", where: "Prampram", who: "Developer in Toronto", when: "2 weeks ago" },
+  { what: "1 plot", where: "Aburi Hills", who: "Client in Hamburg", when: "2 weeks ago" },
+  { what: "Corner plot", where: "Kwabenya", who: "Business owner in Accra", when: "3 weeks ago" },
+];
+
+export const comparison = [
+  { item: "Lands Commission search before listing", us: true, them: false },
+  { item: "Physical site verification with surveyor", us: true, them: false },
+  { item: "Documents shared before any payment", us: true, them: false },
+  { item: "Payment through documented bank channels only", us: true, them: "Sometimes" },
+  { item: "Title registered in your name, certificate delivered", us: true, them: "Extra cost" },
+  { item: "Written agreement with timelines", us: true, them: "Rarely" },
+  { item: "Video tours and remote purchase support", us: true, them: false },
+  { item: "Ongoing management for investment property", us: true, them: false },
+];
+
+// Indicative 3-year price movement for serviced residential plots. Placeholder figures for the demo.
+export const marketInsights = [
+  { area: "East Legon Hills", growth: 41, price: "GH₵320k", note: "Established, low supply" },
+  { area: "Oyarifa", growth: 58, price: "GH₵185k", note: "Fastest-growing corridor" },
+  { area: "Prampram", growth: 64, price: "GH₵95k", note: "New highway, beach access" },
+  { area: "Kwabenya", growth: 37, price: "GH₵240k", note: "University and main road" },
+  { area: "Aburi", growth: 29, price: "GH₵95k", note: "Weekend and retirement homes" },
+  { area: "Ahodwo, Kumasi", growth: 33, price: "GH₵210k", note: "Kumasi's premium address" },
+];
+
+export const milestones = [
+  { year: "Founding", title: "Started with one principle", body: "Verify first, sell second. Our first ten sales were all plots we had personally searched and walked." },
+  { year: "Growth", title: "Expanded beyond Accra", body: "Opened portfolios in the Ashanti, Central and Eastern regions with local surveyors on the ground." },
+  { year: "Diaspora", title: "Built the remote purchase process", body: "Video tours, power of attorney and documented payments so clients abroad could buy safely." },
+  { year: "Investments", title: "Launched managed products", body: "Rental income, land banking and development joint ventures with contracted returns." },
+  { year: "Today", title: "Ghana, Africa and beyond", body: "A growing network of partners across West and East Africa, and a record we protect on every deal." },
 ];
 
 export const process = [
@@ -63,7 +104,7 @@ export const process = [
   {
     step: "03",
     title: "Documentation review",
-    body: "Our legal team examines the chain of title — indentures, site plans, allocation notes — before we put our name on it.",
+    body: "Our legal team examines the chain of title (indentures, site plans, allocation notes) before we put our name on it.",
   },
   {
     step: "04",
@@ -100,6 +141,6 @@ export const faqs = [
   },
   {
     q: "I want to sell my land or building. What happens next?",
-    a: "Submit the property through our Sell page or WhatsApp. We do a free valuation, verify your documents, and make you an offer — typically within 7 working days. Payment is made on the agreed date, through documented channels.",
+    a: "Submit the property through our Sell page or WhatsApp. We do a free valuation, verify your documents, and make you an offer, typically within 7 working days. Payment is made on the agreed date, through documented channels.",
   },
 ];

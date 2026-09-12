@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const why = [
-  { icon: Scale, t: "Fair, evidence-based valuation", b: "We benchmark against recent sales in your area — and show you the comparables." },
+  { icon: Scale, t: "Fair, evidence-based valuation", b: "We benchmark against recent sales in your area, and we show you the comparables." },
   { icon: ClipboardCheck, t: "We handle the paperwork", b: "Missing documents? Our legal team helps regularise title as part of the sale." },
   { icon: Banknote, t: "Payment on the agreed date", b: "Documented bank transfer, no instalments unless you want them." },
   { icon: Handshake, t: "Offer within 7 working days", b: "From first message to written offer in a week for most properties." },
@@ -22,7 +22,7 @@ export default function SellPage() {
     <>
       <PageHero
         eyebrow="Sell to us"
-        title={<>Sell your land or building — <span className="italic text-gold-400">without the stress.</span></>}
+        title={<>Sell your land or building, <span className="italic text-gold-400">without the stress.</span></>}
         body="Tell us about your property in four quick steps. We'll value it for free, verify the documents and make you a fair offer."
         image="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=80"
         compact

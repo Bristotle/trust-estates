@@ -9,7 +9,7 @@ import { waLink } from "@/lib/utils";
 const steps = [
   { icon: Video, t: "Live video site tours", b: "Walk the land with our team over video, on your schedule." },
   { icon: FileCheck2, t: "Documents before payment", b: "Search reports and title documents shared before a cedi moves." },
-  { icon: Landmark, t: "Secure, traceable payments", b: "Documented bank channels — never cash to an individual." },
+  { icon: Landmark, t: "Secure, traceable payments", b: "Documented bank channels, never cash to an individual." },
   { icon: Globe2, t: "Registration in your name", b: "We complete registration under power of attorney and courier your certificate." },
 ];
 
@@ -21,8 +21,8 @@ export function Diaspora() {
           <Reveal className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1400&q=80"
-                alt="Client reviewing property documents remotely"
+                src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1400&q=80"
+                alt="Live video site tour on a laptop"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -58,7 +58,7 @@ export function Diaspora() {
               <Button href={waLink("Hello Estates Trust, I live abroad and would like to buy property in Ghana. How does the process work?")} variant="gold">
                 Book a diaspora consultation
               </Button>
-              <Button href="/about#faq" variant="outlineLight">Read the FAQs</Button>
+              <Button href="/diaspora" variant="outlineLight">How buying from abroad works</Button>
             </Reveal>
           </div>
         </div>

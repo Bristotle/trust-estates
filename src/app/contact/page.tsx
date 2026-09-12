@@ -11,14 +11,14 @@ export const metadata: Metadata = { title: "Contact", description: "Speak to an 
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title={<>Let&apos;s <span className="italic text-gold-400">talk.</span></>} body="An advisor responds within one working day — usually much faster on WhatsApp." compact />
+      <PageHero eyebrow="Contact" title={<>Let&apos;s <span className="italic text-gold-400">talk.</span></>} body="An advisor responds within one working day, usually much faster on WhatsApp." compact />
       <section className="bg-cream-100 py-20 lg:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
             <div className="space-y-5">
               {[
                 { icon: MessageCircle, t: "WhatsApp", v: PHONE_PRIMARY, href: waLink("Hello Estates Trust, I'd like to speak with an advisor."), note: "Fastest response" },
-                { icon: Phone, t: "Call us", v: `${PHONE_PRIMARY} · ${PHONE_SECONDARY}`, href: `tel:${PHONE_PRIMARY}`, note: "Mon – Sat, 8am – 6pm GMT" },
+                { icon: Phone, t: "Call us", v: `${PHONE_PRIMARY} · ${PHONE_SECONDARY}`, href: `tel:${PHONE_PRIMARY}`, note: "Mon to Sat, 8am to 6pm GMT" },
                 { icon: Mail, t: "Email", v: "hello@estatestrust.com", href: "mailto:hello@estatestrust.com", note: "For documents and formal enquiries" },
                 { icon: MapPin, t: "Office", v: "Accra, Ghana", href: "#", note: "Visits by appointment" },
               ].map((c, i) => (

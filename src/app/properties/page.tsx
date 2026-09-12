@@ -26,7 +26,7 @@ export default function PropertiesPage() {
           </Suspense>
         </Container>
       </section>
-      <Cta />
+      <Cta eyebrow="Not seeing it?" title={<>We source property <span className="italic text-gold-400">to order.</span></>} body="Tell us the area, size and budget. Many of our best plots are sold before they are listed publicly." />
     </>
   );
 }

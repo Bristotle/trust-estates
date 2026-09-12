@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { PropertyCard } from "@/components/property/property-card";
 import { featuredProperties } from "@/data/properties";
+import { RecentlySecured } from "./recently-secured";
 
 export function Featured() {
   return (
@@ -24,6 +25,7 @@ export function Featured() {
             <PropertyCard key={p.slug} p={p} index={i} />
           ))}
         </div>
+        <RecentlySecured />
       </Container>
     </section>
   );

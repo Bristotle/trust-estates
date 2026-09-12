@@ -1,4 +1,4 @@
-# Estates Trust — demo site
+# Estates Trust : demo site
 
 Pitch demo built by [Manuel Technologies](https://manueltechnologies.com) for Estates Trust.
 
@@ -12,11 +12,11 @@ npm run build    # production build (all routes are static)
 
 ## Where things live
 
-- `src/data/properties.ts` — listings (placeholder data; swap for the client's real inventory or a CMS)
-- `src/data/content.ts` — stats, testimonials, team, process steps, regions, FAQs
-- `src/lib/utils.ts` — phone / WhatsApp numbers used everywhere
-- `src/lib/currency.tsx` — GHS/USD/GBP/EUR toggle + indicative rates
-- `src/lib/image-loader.ts` — Unsplash CDN loader for placeholder imagery; remove once real photos are in `/public`
+- `src/data/properties.ts` : listings (placeholder data; swap for the client's real inventory or a CMS)
+- `src/data/content.ts` : stats, testimonials, team, process steps, regions, FAQs
+- `src/lib/utils.ts` : phone / WhatsApp numbers used everywhere
+- `src/lib/currency.tsx` : GHS/USD/GBP/EUR toggle + indicative rates
+- `src/lib/image-loader.ts` : Unsplash CDN loader for placeholder imagery; remove once real photos are in `/public`
 
 ## Pages
 

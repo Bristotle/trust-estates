@@ -8,9 +8,9 @@ const cols = [
   {
     title: "Explore",
     links: [
-      { href: "/properties?type=land", label: "Lands" },
-      { href: "/properties?type=building", label: "Buildings" },
-      { href: "/properties?type=investment", label: "Investments" },
+      { href: "/lands", label: "Lands" },
+      { href: "/buildings", label: "Buildings" },
+      { href: "/investments", label: "Investments" },
       { href: "/properties", label: "All properties" },
     ],
   },
@@ -26,9 +26,9 @@ const cols = [
   {
     title: "Buying from abroad",
     links: [
-      { href: "/about#diaspora", label: "Diaspora buyers" },
-      { href: "/about#process", label: "Our verification process" },
-      { href: "/about#faq", label: "FAQs" },
+      { href: "/diaspora", label: "Diaspora buyers" },
+      { href: "/process", label: "Our verification process" },
+      { href: "/faq", label: "FAQs" },
     ],
   },
 ];

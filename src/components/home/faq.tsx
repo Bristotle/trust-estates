@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { faqs } from "@/data/content";
@@ -13,7 +14,10 @@ export function Faq() {
     <section id="faq" className="bg-cream-100 py-24 lg:py-32">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
-          <SectionHeading eyebrow="Questions" title={<>Straight answers, <span className="italic text-forest-700">no stories.</span></>} />
+          <div>
+            <SectionHeading eyebrow="Questions" title={<>Straight answers, <span className="italic text-forest-700">no stories.</span></>} />
+            <Link href="/faq" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-forest-900 underline underline-offset-4">All questions <ArrowRight className="size-4" /></Link>
+          </div>
           <div className="divide-y divide-forest-900/10 border-y border-forest-900/10">
             {faqs.map((f, i) => (
               <div key={f.q}>

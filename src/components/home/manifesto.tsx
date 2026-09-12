@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, type MotionValue } from "motion/react"
 import { Container } from "@/components/ui/container";
 
 const text =
-  "Too many Ghanaians — at home and abroad — have paid for land they never truly owned. We built Estates Trust so that never happens to you. Every plot searched. Every title verified. Every promise in writing.";
+  "Too many Ghanaians, at home and abroad, have paid for land they never truly owned. We built Estates Trust so that never happens to you. Every plot searched. Every title verified. Every promise in writing.";
 
 function Word({ children, range, progress }: { children: string; range: [number, number]; progress: MotionValue<number> }) {
   const opacity = useTransform(progress, range, [0.15, 1]);

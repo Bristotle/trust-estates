@@ -16,7 +16,7 @@ const instrument = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: { default: "Estates Trust — Verified Lands, Buildings & Investments in Ghana", template: "%s · Estates Trust" },
+  title: { default: "Estates Trust | Verified Lands, Buildings & Investments in Ghana", template: "%s · Estates Trust" },
   description:
     "Buy, sell and invest in genuine, titled real estate across Ghana, Africa and beyond. Your trust. Our commitment. Your future.",
   openGraph: {

@@ -80,7 +80,7 @@ export function Hero() {
           transition={{ delay: 0.8, duration: 0.7 }}
           className="mt-7 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg"
         >
-          We buy and sell genuine, titled lands and buildings — and help you grow your wealth through secure property investments. Every listing verified before it reaches you.
+          We buy and sell genuine, titled lands and buildings, and help you grow your wealth through secure property investments. Every listing verified before it reaches you.
         </motion.p>
 
         <motion.div
@@ -113,7 +113,7 @@ export function Hero() {
           {[
             { name: "type", label: "I'm looking for", opts: ["Any type", "land", "building", "investment"] },
             { name: "region", label: "Region", opts: ["Any region", "Greater Accra", "Ashanti", "Central", "Eastern"] },
-            { name: "budget", label: "Budget", opts: ["Any budget", "Under GH₵250k", "GH₵250k – 1M", "GH₵1M – 3M", "GH₵3M+"] },
+            { name: "budget", label: "Budget", opts: ["Any budget", "Under GH₵250k", "GH₵250k to 1M", "GH₵1M to 3M", "GH₵3M+"] },
           ].map((f) => (
             <label key={f.name} className="flex flex-col rounded-xl px-4 py-2.5 hover:bg-white/8 transition">
               <span className="text-[10px] uppercase tracking-[0.18em] text-white/50">{f.label}</span>

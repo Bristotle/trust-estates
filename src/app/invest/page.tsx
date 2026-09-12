@@ -5,7 +5,7 @@ import { RoiCalculator } from "@/components/home/roi-calculator";
 import { Reveal } from "@/components/ui/reveal";
 import { PropertyCard } from "@/components/property/property-card";
 import { properties } from "@/data/properties";
-import { Faq } from "@/components/home/faq";
+import { FaqList } from "@/components/faq-list";
 import { Cta } from "@/components/home/cta";
 
 export const metadata: Metadata = {
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const products = [
-  { name: "Rental income", rate: "12 – 18% p.a.", min: "GH₵250,000", term: "Open-ended", body: "Co-own tenanted apartments and short-lets. Quarterly payouts from rent, fully managed." },
-  { name: "Land banking", rate: "18 – 25% p.a.", min: "GH₵50,000", term: "2 – 5 years", body: "Buy into serviced plots in growth corridors before infrastructure lands. Exit via resale or build." },
-  { name: "Development JV", rate: "25 – 35% per cycle", min: "GH₵500,000", term: "12 – 24 months", body: "Fund build-and-sell projects with Estates Trust as developer. Profit share on completion." },
+  { name: "Rental income", rate: "12 to 18% p.a.", min: "GH₵250,000", term: "Open-ended", body: "Co-own tenanted apartments and short-lets. Quarterly payouts from rent, fully managed." },
+  { name: "Land banking", rate: "18 to 25% p.a.", min: "GH₵50,000", term: "2 to 5 years", body: "Buy into serviced plots in growth corridors before infrastructure lands. Exit via resale or build." },
+  { name: "Development JV", rate: "25 to 35% per cycle", min: "GH₵500,000", term: "12 to 24 months", body: "Fund build-and-sell projects with Estates Trust as developer. Profit share on completion." },
 ];
 
 export default function InvestPage() {
@@ -63,8 +63,23 @@ export default function InvestPage() {
           </div>
         </Container>
       </section>
-      <Faq />
-      <Cta />
+      <section className="bg-cream-100 py-20 lg:py-28">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
+            <Reveal>
+              <p className="eyebrow text-gold-600">Investor questions</p>
+              <h2 className="serif-display mt-4 text-4xl text-forest-950 sm:text-5xl">Before you commit <span className="italic text-forest-700">a cedi.</span></h2>
+            </Reveal>
+            <FaqList items={[
+              { q: "Is my investment secured against the property?", a: "Yes. Co-investments are recorded against the specific property in a signed agreement, and land-banking plots are titled in your name." },
+              { q: "Can I exit early?", a: "Rental co-investments can be sold back or transferred with 90 days' notice. Land can be resold at any time, with our resale support. JV exits follow the project timeline." },
+              { q: "How are returns taxed?", a: "Rental income and capital gains are subject to Ghanaian tax. We provide annual statements for your accountant and can introduce a tax adviser." },
+              { q: "What reporting do I get?", a: "Quarterly statements showing rent collected, costs, occupancy and your net payout, plus an annual portfolio summary." },
+            ]} />
+          </div>
+        </Container>
+      </section>
+      <Cta eyebrow="Invest with confidence" title={<>Returns you can <span className="italic text-gold-400">read in writing.</span></>} body="Request the investment pack for any product. It includes the agreement template, projected returns and the risks we have identified." />
     </>
   );
 }
