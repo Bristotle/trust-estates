@@ -1,0 +1,32 @@
+import { Suspense } from "react";
+import type { Metadata } from "next";
+import { PageHero } from "@/components/ui/page-hero";
+import { Container } from "@/components/ui/container";
+import { PropertyGrid } from "@/components/property/property-grid";
+import { Cta } from "@/components/home/cta";
+
+export const metadata: Metadata = {
+  title: "Properties",
+  description: "Verified lands, buildings and investment properties for sale across Ghana.",
+};
+
+export default function PropertiesPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Our portfolio"
+        title={<>Verified <span className="italic text-gold-400">properties</span> for sale</>}
+        body="Every listing below has passed a Lands Commission search and physical site verification. Filter by type, region and budget."
+        compact
+      />
+      <section className="bg-cream-100 pb-24">
+        <Container>
+          <Suspense>
+            <PropertyGrid />
+          </Suspense>
+        </Container>
+      </section>
+      <Cta />
+    </>
+  );
+}
