@@ -4,14 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BadgeCheck, MapPin, Ruler } from "lucide-react";
 import { motion } from "motion/react";
+import { useState } from "react";
 import { type Property, typeLabel } from "@/data/properties";
 import { formatPrice, useCurrency } from "@/lib/currency";
 import { cn } from "@/lib/utils";
 
 export function PropertyCard({ p, className, index = 0, priority = false }: { p: Property; className?: string; index?: number; priority?: boolean }) {
   const { currency } = useCurrency();
+  // The second photo is only fetched once a pointer hovers the card, so phones never download it.
+  const [hovered, setHovered] = useState(false);
   return (
     <motion.article
+      onMouseEnter={() => setHovered(true)}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -28,11 +32,12 @@ export function PropertyCard({ p, className, index = 0, priority = false }: { p:
           sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        {p.images[1] && (
+        {hovered && p.images[1] && (
           <Image
             src={p.images[1]}
             alt=""
             fill
+            quality={65}
             sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
             className="object-cover opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
           />

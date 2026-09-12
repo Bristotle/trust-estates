@@ -55,7 +55,7 @@ export function Services() {
                 href={s.href}
                 className="group relative flex h-full min-h-[300px] flex-col justify-end overflow-hidden rounded-3xl p-7 ring-1 ring-white/10 lg:min-h-[320px]"
               >
-                <Image src={s.img} alt="" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105" />
+                <Image src={s.img} alt="" fill quality={60} sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/60 to-forest-950/10" />
                 <div className="relative">
                   <span className="grid size-11 place-items-center rounded-full border border-gold-400/40 bg-forest-950/40 text-gold-400 backdrop-blur">
