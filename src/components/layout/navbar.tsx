@@ -20,6 +20,7 @@ const links = [
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const { currency, setCurrency } = useCurrency();
@@ -27,7 +28,15 @@ export function Navbar() {
   const solid = scrolled || open || !onDark;
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 24);
+    let last = window.scrollY;
+    const fn = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      // Only react to deliberate movement so eased scroll tails don't flip the state back.
+      if (y > last + 6) setHidden(y > 160);
+      else if (y < last - 6) setHidden(false);
+      last = y;
+    };
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
@@ -42,6 +51,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        hidden && !open && "-translate-y-full",
         solid ? "bg-cream-100/85 backdrop-blur-xl border-b border-forest-900/10 shadow-[0_1px_0_rgba(0,0,0,0.02)]" : "bg-transparent",
       )}
     >

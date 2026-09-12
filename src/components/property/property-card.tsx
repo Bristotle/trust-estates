@@ -26,6 +26,15 @@ export function PropertyCard({ p, className, index = 0 }: { p: Property; classNa
           sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
+        {p.images[1] && (
+          <Image
+            src={p.images[1]}
+            alt=""
+            fill
+            sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
+            className="object-cover opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-forest-950/60 via-transparent to-transparent" />
         <div className="absolute left-4 top-4 flex gap-2">
           <span className="rounded-full bg-white/90 backdrop-blur px-3 py-1 text-[11px] font-semibold tracking-wide text-forest-900">

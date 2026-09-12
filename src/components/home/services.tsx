@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const services = [
   {
@@ -49,6 +50,7 @@ export function Services() {
         <div className="mt-14 grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08} className={s.span}>
+              <SpotlightCard className="h-full rounded-3xl">
               <Link
                 href={s.href}
                 className="group relative flex h-full min-h-[300px] flex-col justify-end overflow-hidden rounded-3xl p-7 ring-1 ring-white/10 lg:min-h-[320px]"
@@ -66,6 +68,7 @@ export function Services() {
                   </span>
                 </div>
               </Link>
+              </SpotlightCard>
             </Reveal>
           ))}
         </div>

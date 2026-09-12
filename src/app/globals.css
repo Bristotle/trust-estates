@@ -20,7 +20,7 @@
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
 
-  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee: marquee 45s linear infinite;
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }

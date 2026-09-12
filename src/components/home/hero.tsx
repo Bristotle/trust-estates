@@ -2,13 +2,20 @@
 
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, MessageCircle, Search, ShieldCheck } from "lucide-react";
+import { AnimatePresence } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
 const words = ["Real estate", "you can", "trust."];
+
+const slides = [
+  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=80",
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=80",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2400&q=80",
+];
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -17,17 +24,27 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1.18]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % slides.length), 7000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section ref={ref} className="relative min-h-[100svh] overflow-hidden bg-forest-950 text-white grain">
       <motion.div style={{ y, scale }} className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=80"
-          alt="Modern villa at dusk"
-          fill
-          priority
-          className="object-cover"
-        />
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={slide}
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: 1, scale: 1.08 }}
+            exit={{ opacity: 0 }}
+            transition={{ opacity: { duration: 1.6, ease: "easeInOut" }, scale: { duration: 8, ease: "linear" } }}
+            className="absolute inset-0"
+          >
+            <Image src={slides[slide]} alt="Premium property" fill priority={slide === 0} sizes="100vw" className="object-cover" />
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-forest-950/70 via-forest-950/55 to-forest-950" />
       <div className="absolute inset-0 bg-gradient-to-r from-forest-950/70 via-transparent to-transparent" />
@@ -122,6 +139,21 @@ export function Hero() {
           <span className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold-400" /> Zero litigation record</span>
           <span className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold-400" /> Diaspora-friendly purchase process</span>
         </motion.div>
+      </motion.div>
+
+      <div className="absolute bottom-8 right-8 hidden items-center gap-2 lg:flex">
+        {slides.map((_, i) => (
+          <button key={i} onClick={() => setSlide(i)} aria-label={`Slide ${i + 1}`} className={`h-1 rounded-full transition-all duration-500 ${i === slide ? "w-8 bg-gold-400" : "w-3 bg-white/30"}`} />
+        ))}
+      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/40 lg:flex"
+      >
+        Scroll
+        <motion.span animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }} className="h-8 w-px bg-gradient-to-b from-gold-400 to-transparent" />
       </motion.div>
     </section>
   );

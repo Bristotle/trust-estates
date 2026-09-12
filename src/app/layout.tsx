@@ -5,6 +5,7 @@ import { CurrencyProvider } from "@/lib/currency";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
+import { SmoothScroll } from "@/components/ui/smooth-scroll";
 
 const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
 const instrument = Instrument_Serif({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${manrope.variable} ${instrument.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <CurrencyProvider>
+          <SmoothScroll />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

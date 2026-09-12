@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "motion/react";
 import { stats } from "@/data/content";
 import { Container } from "@/components/ui/container";
+import { Marquee } from "@/components/ui/marquee";
 
 function Counter({ value, suffix, display }: { value: number; suffix: string; display?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -46,6 +47,10 @@ export function Stats() {
           ))}
         </div>
       </Container>
+      <Marquee
+        className="mt-10 border-y border-white/10"
+        items={["Registered titles", "Lands Commission searches", "Physical site verification", "Diaspora purchases", "Flexible payment plans", "Managed investments", "Ghana · Africa · Beyond"]}
+      />
     </section>
   );
 }

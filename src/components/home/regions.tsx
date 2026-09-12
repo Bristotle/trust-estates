@@ -2,6 +2,7 @@ import { MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { regionsServed } from "@/data/content";
 
 export function Regions() {
@@ -18,7 +19,7 @@ export function Regions() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {regionsServed.map((r, i) => (
             <Reveal key={r.name} delay={i * 0.06}>
-              <div className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-gold-400/50 hover:bg-white/8">
+              <SpotlightCard className="group flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-gold-400/50 hover:bg-white/8">
                 <div className="flex items-start justify-between">
                   <span className="grid size-10 place-items-center rounded-full bg-gold-400/15 text-gold-400">
                     <MapPin className="size-4" />
@@ -35,7 +36,7 @@ export function Regions() {
                   <h3 className="serif-display text-2xl">{r.name}</h3>
                   <p className="mt-2 text-sm text-white/55">{r.areas}</p>
                 </div>
-              </div>
+              </SpotlightCard>
             </Reveal>
           ))}
         </div>
