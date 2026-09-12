@@ -19,6 +19,7 @@ export function Cta({
         alt=""
         fill
         sizes="100vw"
+        quality={35}
         className="object-cover opacity-30"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-forest-950 via-forest-950/70 to-forest-950" />

@@ -12,7 +12,7 @@ const button = cva(
         outline: "border border-forest-900/25 text-forest-900 hover:bg-forest-900 hover:text-white",
         outlineLight: "border border-white/30 text-white hover:bg-white hover:text-forest-950",
         ghost: "text-forest-900 hover:bg-forest-900/5",
-        whatsapp: "bg-[#25D366] text-white hover:bg-[#1ebe5b]",
+        whatsapp: "bg-[#25D366] text-forest-950 hover:bg-[#1ebe5b]",
       },
       size: {
         sm: "h-9 px-4 text-[13px]",

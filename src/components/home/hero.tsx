@@ -50,57 +50,36 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-forest-950/70 via-transparent to-transparent" />
 
       <motion.div style={{ opacity }} className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 sm:px-8 lg:pb-24">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="eyebrow mb-6 flex items-center gap-3 text-gold-400"
-        >
+        <p className="eyebrow fade-up mb-6 flex items-center gap-3 text-gold-400" style={{ animationDelay: "0.1s" }}>
           <span className="h-px w-10 bg-gold-400" /> Ghana · Africa · Beyond
-        </motion.p>
+        </p>
 
         <h1 className="serif-display max-w-4xl text-[3.2rem] leading-[0.98] sm:text-7xl lg:text-[6.5rem]">
           {words.map((w, i) => (
             <span key={w} className="inline-block overflow-hidden pb-1 pr-[0.25em] align-top">
-              <motion.span
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ delay: 0.15 + i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className={`inline-block ${i === 2 ? "italic text-gold-400" : ""}`}
-              >
+              <span className={`rise inline-block ${i === 2 ? "italic text-gold-400" : ""}`} style={{ animationDelay: `${0.15 + i * 0.1}s` }}>
                 {w}
-              </motion.span>
+              </span>
             </span>
           ))}
         </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.7 }}
-          className="mt-7 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg"
-        >
+        <p className="fade-up mt-7 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg" style={{ animationDelay: "0.45s" }}>
           We buy and sell genuine, titled lands and buildings, and help you grow your wealth through secure property investments. Every listing verified before it reaches you.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.95, duration: 0.7 }}
-          className="mt-9 flex flex-wrap items-center gap-3"
-        >
+        <div className="fade-up mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "0.6s" }}>
           <Button href="/properties" variant="gold" size="lg">
             Explore properties <ArrowRight className="size-4" />
           </Button>
           <Button href={waLink("Hello Estates Trust, I'd like to speak with an advisor.")} variant="outlineLight" size="lg">
             <MessageCircle className="size-4" /> Talk to an advisor
           </Button>
-        </motion.div>
+        </div>
 
-        <motion.form
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.15, duration: 0.7 }}
+        <form
+          className="fade-up mt-12 grid max-w-3xl grid-cols-1 gap-2 rounded-2xl border border-white/15 bg-white/8 p-2 backdrop-blur-xl sm:grid-cols-[1fr_1fr_1fr_auto]"
+          style={{ animationDelay: "0.75s" }}
           onSubmit={(e) => {
             e.preventDefault();
             const fd = new FormData(e.currentTarget);
@@ -108,7 +87,6 @@ export function Hero() {
             for (const [k, v] of fd.entries()) if (v) params.set(k, String(v));
             router.push(`/properties?${params.toString()}`);
           }}
-          className="mt-12 grid max-w-3xl grid-cols-1 gap-2 rounded-2xl border border-white/15 bg-white/8 p-2 backdrop-blur-xl sm:grid-cols-[1fr_1fr_1fr_auto]"
         >
           {[
             { name: "type", label: "I'm looking for", opts: ["Any type", "land", "building", "investment"] },
@@ -127,18 +105,13 @@ export function Hero() {
           <button type="submit" className="flex h-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-gold-400 px-6 text-sm font-semibold text-forest-950 transition hover:bg-gold-300">
             <Search className="size-4" /> Search
           </button>
-        </motion.form>
+        </form>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-[13px] text-white/60"
-        >
+        <div className="fade-up mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-[13px] text-white/60" style={{ animationDelay: "0.9s" }}>
           <span className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold-400" /> Lands Commission verified</span>
           <span className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold-400" /> Zero litigation record</span>
           <span className="flex items-center gap-2"><ShieldCheck className="size-4 text-gold-400" /> Diaspora-friendly purchase process</span>
-        </motion.div>
+        </div>
       </motion.div>
 
       <div className="absolute bottom-8 right-8 hidden items-center gap-2 lg:flex">

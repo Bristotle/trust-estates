@@ -75,11 +75,11 @@ export function PropertyGrid({ fixedType }: { fixedType?: PropertyType } = {}) {
             ))}
           </div>
           )}
-          <select value={region} onChange={(e) => setRegion(e.target.value)} className="h-10 rounded-full border border-forest-900/15 bg-white px-4 text-[13px] font-medium text-forest-900">
+          <select aria-label="Region" value={region} onChange={(e) => setRegion(e.target.value)} className="h-10 rounded-full border border-forest-900/15 bg-white px-4 text-[13px] font-medium text-forest-900">
             <option value="">All regions</option>
             {regions.map((r) => <option key={r}>{r}</option>)}
           </select>
-          <select value={budget} onChange={(e) => setBudget(e.target.value)} className="h-10 rounded-full border border-forest-900/15 bg-white px-4 text-[13px] font-medium text-forest-900">
+          <select aria-label="Budget" value={budget} onChange={(e) => setBudget(e.target.value)} className="h-10 rounded-full border border-forest-900/15 bg-white px-4 text-[13px] font-medium text-forest-900">
             {BUDGETS.map((b) => <option key={b.l}>{b.l}</option>)}
           </select>
           <label className="flex h-10 cursor-pointer items-center gap-2 rounded-full border border-forest-900/15 bg-white px-4 text-[13px] font-medium text-forest-900">
@@ -93,7 +93,7 @@ export function PropertyGrid({ fixedType }: { fixedType?: PropertyType } = {}) {
             )}
             <label className="flex items-center gap-2 text-[13px] text-ink-muted">
               <SlidersHorizontal className="size-4" />
-              <select value={sort} onChange={(e) => setSort(e.target.value)} className="bg-transparent font-medium text-forest-900">
+              <select aria-label="Sort by" value={sort} onChange={(e) => setSort(e.target.value)} className="bg-transparent font-medium text-forest-900">
                 {SORTS.map((s) => <option key={s.v} value={s.v}>{s.l}</option>)}
               </select>
             </label>
@@ -101,13 +101,14 @@ export function PropertyGrid({ fixedType }: { fixedType?: PropertyType } = {}) {
         </div>
       </div>
 
+      <h2 className="sr-only">Listings</h2>
       <p className="mt-8 text-sm text-ink-muted">
         Showing <span className="font-semibold text-forest-900">{list.length}</span> {list.length === 1 ? "property" : "properties"}
       </p>
 
       {list.length ? (
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((p, i) => <PropertyCard key={p.slug} p={p} index={i} />)}
+          {list.map((p, i) => <PropertyCard key={p.slug} p={p} index={i} priority={i < 3} />)}
         </div>
       ) : (
         <div className="mt-6 rounded-3xl border border-dashed border-forest-900/20 p-16 text-center">

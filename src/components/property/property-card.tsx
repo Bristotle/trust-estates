@@ -8,7 +8,7 @@ import { type Property, typeLabel } from "@/data/properties";
 import { formatPrice, useCurrency } from "@/lib/currency";
 import { cn } from "@/lib/utils";
 
-export function PropertyCard({ p, className, index = 0 }: { p: Property; className?: string; index?: number }) {
+export function PropertyCard({ p, className, index = 0, priority = false }: { p: Property; className?: string; index?: number; priority?: boolean }) {
   const { currency } = useCurrency();
   return (
     <motion.article
@@ -23,6 +23,7 @@ export function PropertyCard({ p, className, index = 0 }: { p: Property; classNa
           src={p.images[0]}
           alt={p.title}
           fill
+          priority={priority}
           quality={65}
           sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
