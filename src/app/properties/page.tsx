@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/page-hero";
 import { Container } from "@/components/ui/container";
 import { PropertyGrid } from "@/components/property/property-grid";
+import { PropertyGridSkeleton } from "@/components/property/property-grid-skeleton";
 import { Cta } from "@/components/home/cta";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function PropertiesPage() {
       />
       <section className="bg-cream-100 pb-24">
         <Container>
-          <Suspense>
+          <Suspense fallback={<PropertyGridSkeleton cards={9} withTypeToggle={true} />}>
             <PropertyGrid />
           </Suspense>
         </Container>

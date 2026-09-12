@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { PropertyGrid } from "@/components/property/property-grid";
+import { PropertyGridSkeleton } from "@/components/property/property-grid-skeleton";
 import { Cta } from "@/components/home/cta";
 import { type PropertyType } from "@/data/properties";
 import type { LucideIcon } from "lucide-react";
@@ -39,7 +40,7 @@ export function CategoryPage({
       </section>
       <section className="bg-cream-100 pb-24">
         <Container>
-          <Suspense>
+          <Suspense fallback={<PropertyGridSkeleton cards={4} withTypeToggle={false} />}>
             <PropertyGrid fixedType={type} />
           </Suspense>
         </Container>
